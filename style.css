@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: beige
+}
+.wrapper {
+    width: 400px;
+    overflow: hidden;
+}
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.slides {
+    width: 400%;
+    height: 100%;
+    display: flex;
+}
+.slide {
+    width: 25%;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+}
+.image {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 32px;
+}
+#nav {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 20px;
+    gap: 10px;
+}
+label {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 100%;
+    border: 2px solid rgb(148, 54, 54);
+    background-color: rgb(148, 54, 54);
+    width: 50%;
+    height: 50%;
+    transition: 0.3s;
+}
+label:hover {
+    border: #fff;
+    background-color: #fff;
+}
+input[name="radio"] {
+    position: absolute;
+    visibility: hidden;
+}
+#r1:checked ~ .s1 {
+    margin-left: 0;
+}
+#r2:checked ~ .s1 {
+    margin-left: -25%;
+}
+#r3:checked ~ .s1 {
+    margin-left: -50%;
+}
+#r4:checked ~ .s1 {
+    margin-left: -75%;
+}
+#r1:checked ~ #nav label:nth-child(1),
+#r2:checked ~ #nav label:nth-child(2),
+#r3:checked ~ #nav label:nth-child(3),
+#r4:checked ~ #nav label:nth-child(4){
+	background: #eed325;
+	border-color: #eed325;
+}
+
+#r1:checked ~ .text-container {
+    margin-bottom: 0;
+}
+#r2:checked ~ .text-container {
+    margin-bottom: 32px;
+}
+#r3:checked ~ .text-container {
+    margin-bottom: 64px;
+}
+#r4:checked ~ .text-container {
+    margin-bottom: 96px;
+}
+
+@media(max-width:600px) {
+    .wrapper {
+        height: 450px;
+    }
+    .center {
+        top: 40%;
+    }
+    #bedolaga {
+        height: 94%;
+    }
+    #no_to_racism {
+        height: 94%;
+    }
+}
